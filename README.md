@@ -97,4 +97,27 @@ will you open ppt from keynote?
 
 the pypy cannot using c module. (don't be scare, standard library written in c is rewrite)
 
+### cython 
+[reference](http://docs.cython.org/src/userguide/tutorial.html)
 
+uncomment all the comment in setup.py
+
+before using cython
+	
+	time profile_sample1
+	finish
+	
+	real	0m2.938s
+	user	0m2.912s
+	sys	0m0.024s
+ 
+ after using cython
+ 
+	time profile_sample1clone
+	finish
+	
+	real	0m3.680s
+	user	0m3.631s
+	sys	0m0.046s
+	
+	
