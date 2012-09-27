@@ -1,24 +1,40 @@
 __author__ = 'tim'
-from setuptools import  setup, find_packages
-from distutils.extension import Extension
-from Cython.Distutils import build_ext
-ext_modules = [Extension(sources=['profile_sample1.py'], name='profile_sample1')]
+import sys
+if sys.argv[-1] == 'cython':
+    sys.argv.pop()
+    print 'cython'
+    from distutils.core import setup
+    #from setuptools import find_packages
+    from Cython.Distutils import Extension, build_ext
+
+else:
+    from setuptools import setup
+    from Cython.Distutils import Extension, build_ext
+    #from setuptools import find_packages
+
+
+ext_modules = [
+    Extension(
+        name='cython_sample',
+        sources=['cython_sample.pyx'],
+    )
+]
 
 setup(
     name = 'performance_samples',
     install_requires = [
-        'Cython',
+        'Cython', 'gevent',
         ],
     version = 1.0,
     description = "samples about performance",
     author = 'wen chang',
     author_email = 'tim.yellow@gmailc.om',
-    packages = find_packages(),
-    py_modules= ['profile_sample1', 'profile_sample2'],
+    py_modules= ['profile_sample1', 'profile_sample2', 'cython_sample'],
     entry_points = {
         'console_scripts': [
             "profile_sample1 = profile_sample1:main",
-            "profile_sample1clone = profile_sample1clone:main",
+            "cython_sample = cython_sample:main",
+
             ],
         },
     package_data = {},

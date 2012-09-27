@@ -1,14 +1,17 @@
 #python-performance-tips
 
 ##Total Requirements
-
+### Repository
+	https://github.com/timtan/python-performance-tips.git
 ###Platform Dependency
 * mac
   * XCode
   * libevent
     
-
-
+### python dependency
+ 
+	pip install -r requirement.txt 
+	
 ##Profile
 
 #### Analyze profile_sample1
@@ -72,23 +75,20 @@ there are some reason that you cannot adopt the above process
   
 the original python
   
-    time python2.7 profile_sample1.py 
+	time python profile_sample1.py
 	
-	finish
-	
-	real	0m3.910s
-	user	0m3.748s
-	sys	    0m0.134s
-	
+	real	0m7.234s
+	user	0m7.111s
+	sys	    0m0.086s
+		
 	
 the amazing pypy	
 
-	time pypy profile_sample1.py 
-	finish
+	time pypy  profile_sample1.py
 	
-	real	0m0.947s
-	user	0m0.543s
-	sys	    0m0.058s
+	real	0m1.348s
+	user	0m0.980s
+	sys	    0m0.054s
 
 
 ### drawback of pypy
@@ -98,9 +98,15 @@ will you open ppt from keynote?
 the pypy cannot using c module. (don't be scare, standard library written in c is rewrite)
 
 ### cython 
+
+before using cython, it is easier to have a setup.py first.
+
 [reference](http://docs.cython.org/src/userguide/tutorial.html)
 
-uncomment all the comment in setup.py
+please type the command first
+
+	make 
+ 
 
 before using cython
 	
@@ -113,11 +119,35 @@ before using cython
  
  after using cython
  
-	time profile_sample1clone
-	finish
+	time cython_sample 
+	finish pyx message
 	
-	real	0m3.680s
-	user	0m3.631s
-	sys	0m0.046s
+	real	0m2.800s
+	user	0m2.775s
+	sys	0m0.022s
 	
-	
+### Cython Reference
+ 
+ 
+ 
+ * [build cython manually][cython_manually] 
+ * [build cython in setup][cython_setup] 
+ * [cython is not compatible with][build_issue]
+
+ [cython_manually]: (http://blog.perrygeo.net/2008/04/19/a-quick-cython-introduction/)
+ [cython_setup]: ((http://ldots.org/pyrex-guide/2-compiling.html#distutils)
+ [build_issue]: (https://groups.google.com/forum/?fromgroups=#!topic/cython-users/q42q9rFFaIs)
+ 
+ 
+### Multiprocessing and multithreading
+
+  
+  
+ 
+### Gevent
+
+[victor's good introduction][victor_gevent]
+
+
+[victor_gevent]: (http://blog.ez2learn.com/2010/07/17/talk-about-coroutine-and-gevent/)
+
