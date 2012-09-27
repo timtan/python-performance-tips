@@ -111,7 +111,6 @@ please type the command first
 before using cython
 	
 	time profile_sample1
-	finish
 	
 	real	0m2.938s
 	user	0m2.912s
@@ -120,7 +119,6 @@ before using cython
  after using cython
  
 	time cython_sample 
-	finish pyx message
 	
 	real	0m2.800s
 	user	0m2.775s
@@ -141,8 +139,31 @@ before using cython
  
 ### Multiprocessing and multithreading
 
+the sample program taks 7 second.
+
+	time python  computation_parallel_example.py
+		
+	real	0m7.084s
+	user	0m6.639s
+	sys	    0m0.403s
+	
+however, the multithreading version are also take 7 second :(
+
+	time python  computation_parallel_example_threading.py 
+	
+	
+	real	0m7.009s
+	user	0m6.560s
+	sys	0m0.429s
+
+
+multiprocessing version with 2 process
   
-  
+	time python computation_parallel_multiprocessing.py 
+
+	real	0m4.537s
+	user	0m7.682s
+	sys	    0m0.589s
  
 ### Gevent
 
@@ -150,4 +171,4 @@ before using cython
 
 
 [victor_gevent]: (http://blog.ez2learn.com/2010/07/17/talk-about-coroutine-and-gevent/)
-
+[reddit]: https://github.com/reddit/reddit
