@@ -5,21 +5,27 @@ import Queue
 queue = Queue.Queue()
 
 
-def find_max():
+def find_max(value):
+
+    v = max(range(value))
+    print v
+
+def find_max_thread():
     while True:
-        maximum = queue.get()
-        v = max(range(maximum))
-        print v
+        value = queue.get()
+        find_max(value)
         queue.task_done()
 
 data = [9999999, 9999999, 9999999] * 3
-for d in data:
-    t = Thread(target=find_max)
+
+for maximum in data:
+    queue.put(maximum)
+
+for maximum in data:
+    t = Thread(target=find_max_thread)
     t.setDaemon(True)
     t.start()
 
-for maximum in data:
-    queue.put(d)
 queue.join()
 print 'finish'
 
