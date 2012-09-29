@@ -132,9 +132,9 @@ before using cython
  * [build cython in setup][cython_setup] 
  * [cython is not compatible with][build_issue]
 
- [cython_manually]: (http://blog.perrygeo.net/2008/04/19/a-quick-cython-introduction/)
- [cython_setup]: ((http://ldots.org/pyrex-guide/2-compiling.html#distutils)
- [build_issue]: (https://groups.google.com/forum/?fromgroups=#!topic/cython-users/q42q9rFFaIs)
+ [cython_manually]: http://blog.perrygeo.net/2008/04/19/a-quick-cython-introduction/
+ [cython_setup]: http://ldots.org/pyrex-guide/2-compiling.html#distutils
+ [build_issue]: https://groups.google.com/forum/?fromgroups=#!topic/cython-users/q42q9rFFaIs
  
  
 ### Multiprocessing and multithreading
@@ -173,4 +173,4 @@ a very good explanation of [GIL](http://dabeaz.blogspot.tw/2011/08/inside-look-a
 [victor's good introduction][victor_gevent]
 
 
-[victor_gevent]: (http://blog.ez2learn.com/2010/07/17/talk-about-coroutine-and-gevent/)
+[victor_gevent]: http://blog.ez2learn.com/2010/07/17/talk-about-coroutine-and-gevent/
