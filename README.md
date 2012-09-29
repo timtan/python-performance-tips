@@ -130,7 +130,7 @@ before using cython
  
  * [build cython manually][cython_manually] 
  * [build cython in setup][cython_setup] 
- * [cython is not compatible with][build_issue]
+ * [cython is not compatible with setuptools][build_issue]
 
  [cython_manually]: http://blog.perrygeo.net/2008/04/19/a-quick-cython-introduction/
  [cython_setup]: http://ldots.org/pyrex-guide/2-compiling.html#distutils
