@@ -165,10 +165,12 @@ multiprocessing version with 2 process
 	user	0m7.682s
 	sys	    0m0.589s
  
+ 
+a very good explanation of [GIL](http://dabeaz.blogspot.tw/2011/08/inside-look-at-gil-removal-patch-of.html)
+ 
 ### Gevent
 
 [victor's good introduction][victor_gevent]
 
 
 [victor_gevent]: (http://blog.ez2learn.com/2010/07/17/talk-about-coroutine-and-gevent/)
-[reddit]: https://github.com/reddit/reddit
